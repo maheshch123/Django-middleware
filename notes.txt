@@ -1,0 +1,11 @@
+Writing a custom Middleware :
+In very simple terms, it is much like a view function.
+The only thing we need to care about is that there are 2 hooks available for request and 3 for a response.
+Your Middleware class should define at least one of the following methods:
+Called during request:
+process_request(request)
+process_view(request, view_func, view_args, view_kwargs)
+Called during response:
+process_exception(request, exception) (only if the view raised an exception)
+process_template_response(request, response) (only for template responses)
+process_response(request, response)
